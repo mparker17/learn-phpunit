@@ -3,25 +3,28 @@
 use \Mpd\BowlingKata\BowlingGame;
 
 class BowlingGameTest extends PHPUnit_Framework_TestCase {
+    private $game;
+
+    function setUp() {
+        $this->game = new BowlingGame();
+    }
+
     function testBowlAllZeroes() {
-        $game = new BowlingGame();
+        $this->rollMany(0);
 
-        // Roll a bunch of zeroes; two balls per frame.
-        for ($i = 0; $i < 20; $i++) {
-            $game->roll(0);
-        }
-
-        $this->assertSame(0, $game->score());
+        $this->assertSame(0, $this->game->score());
     }
 
     function testBowlAllOnes() {
-        $game = new BowlingGame();
+        $this->rollMany(1);
 
-        // Roll a bunch of ones; two balls per frame.
+        $this->assertSame(20, $this->game->score());
+    }
+
+    private function rollMany($n) {
+        // Roll two balls per frame.
         for ($i = 0; $i < 20; $i++) {
-            $game->roll(1);
+            $this->game->roll($n);
         }
-
-        $this->assertSame(20, $game->score());
     }
 }
