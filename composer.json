@@ -1,18 +1,18 @@
 {
-	"name": "mparker17/PhpUnitPlanetarium",
-	"license": "GPL-2",
-	"authors": [
-		{
-			"name": "mparker17",
-			"email": "mparker17@536298.no-reply.drupal.org"
-		}
-	],
-	"require-dev": {
-		"phpunit/phpunit": "3.7.21"
-	},
-	"autoload": {
-		"psr-0": {
-			"Mpd": "src/"
-		}
-	}
+    "name": "mparker17/PhpUnitPlanetarium",
+    "license": "GPL-2",
+    "authors": [
+        {
+            "name": "mparker17",
+            "email": "mparker17@536298.no-reply.drupal.org"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "3.7.21"
+    },
+    "autoload": {
+        "psr-0": {
+            "Mpd": "src/"
+        }
+    }
 }
