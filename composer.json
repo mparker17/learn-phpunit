@@ -1,5 +1,7 @@
 {
-	"require": {
+	"name": "mparker17/PhpUnitPlanetarium",
+	"license": "GPL-2",
+	"require-dev": {
 		"phpunit/phpunit": "3.7.21"
 	}
 }
