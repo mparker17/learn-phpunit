@@ -10,21 +10,20 @@ class BowlingGameTest extends PHPUnit_Framework_TestCase {
     }
 
     function testBowlAllZeroes() {
-        $this->rollMany(0);
+        $this->rollMany(20, 0);
 
         $this->assertSame(0, $this->game->score());
     }
 
     function testBowlAllOnes() {
-        $this->rollMany(1);
+        $this->rollMany(20, 1);
 
         $this->assertSame(20, $this->game->score());
     }
 
-    private function rollMany($n) {
-        // Roll two balls per frame.
-        for ($i = 0; $i < 20; $i++) {
-            $this->game->roll($n);
+    private function rollMany($how_many, $pins) {
+        for ($i = 0; $i < $how_many; $i++) {
+            $this->game->roll($pins);
         }
     }
 }
