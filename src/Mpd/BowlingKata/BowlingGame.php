@@ -3,14 +3,19 @@
 namespace Mpd\BowlingKata;
 
 class BowlingGame {
-
-    private $score;
+    private $rolls = array();
 
     public function score() {
-        return $this->score;
+        $answer = 0;
+
+        foreach ($this->rolls as $roll) {
+            $answer += $roll;
+        }
+
+        return $answer;
     }
 
     public function roll($pins) {
-        $this->score += $pins;
+        array_push($this->rolls, $pins);
     }
 }
